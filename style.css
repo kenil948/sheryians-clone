@@ -11,27 +11,32 @@
 
 @font-face {
     font-family: neu;
-    src: url(language/NeueMachina-Regular_DQCmjH1st.ttf);
+    src: url(assets/fonts/NeueMachina-Regular_DQCmjH1st.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: helvetica;
-    src: url(language/Helvetica_NTUXwLmxSC.ttf);
+    src: url(assets/fonts/Helvetica_NTUXwLmxSC.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: helvetica bold;
-    src: url(language/HelveticaNowDisplay-Bold_VMHV5twUMR.ttf);
+    src: url(assets/fonts/HelveticaNowDisplay-Bold_VMHV5twUMR.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: helvetica med;
-    src: url(language/HelveticaNowDisplay-Medium_2wEhlmo-TD.ttf);
+    src: url(assets/fonts/HelveticaNowDisplay-Medium_2wEhlmo-TD.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: Gilory;
-    src: url(language/Gilroy-Bold_JK4cTGJOE.ttf);
+    src: url(assets/fonts/Gilroy-Bold_JK4cTGJOE.ttf);
+    font-display: swap;
 }
 
 * {
@@ -46,6 +51,11 @@ body {
     height: 100%;
     width: 100%;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
     background-color: var(--black);
@@ -65,6 +75,12 @@ body {
 
 .lgray {
     background-color: var(--lgray);
+}
+
+button:hover {
+    opacity: .85;
+    cursor: pointer;
+    transition: .2s ease;
 }
 
 nav {
@@ -123,6 +139,45 @@ nav {
     font-size: 17PX;
 }
 
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    padding: 75px 20px;
+    transition: .4s ease-in-out;
+    z-index: 999;
+}
+
+.mobile-menu a {
+    font-size: 20px;
+    margin: 12px 0;
+    text-decoration: none;
+}
+
+.mobile-menu button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    background: var(--green);
+    border-radius: 5px;
+}
+
+.mobile-menu .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+}
+
+.mobile-menu.show {
+    right: 0;
+}
+
 /* responsive for nav */
 @media (max-width: 600px) {
 
@@ -149,7 +204,7 @@ nav {
     }
 }
 
-/* Main part */
+/* main part */
 main {
     padding-top: 80px;
 }
@@ -185,7 +240,6 @@ main {
     background-color: var(--gray);
     padding: 10px 25px;
     font-family: Gilory;
-
     border-radius: 5px;
     font-size: 13px;
     font-weight: 600;
@@ -447,7 +501,6 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 .section3 .text h1 {
@@ -467,7 +520,6 @@ main {
     align-items: center;
     margin: 60px 0;
     flex-direction: column;
-    padding-bottom: 20px;
     font-family: helvetica med;
 }
 
@@ -476,7 +528,6 @@ main {
     margin-bottom: 25px;
     font-weight: 600;
 }
-
 
 
 /* connector */
@@ -488,7 +539,6 @@ main {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     border-color: #888;
-
 }
 
 .diff-connector::before,
@@ -508,7 +558,6 @@ main {
     right: 0;
 }
 
-
 .section3 .difference .diff {
     display: flex;
     align-items: flex-start;
@@ -524,7 +573,6 @@ main {
     font-size: 17px;
 }
 
-
 .left-heading,
 .right-heading {
     display: flex;
@@ -536,18 +584,15 @@ main {
     font-size: 22px;
 }
 
-
 .left-heading h4,
 .left-heading p {
     color: #33d889;
 }
 
-
 .right-heading h4,
 .right-heading p {
     color: #ff4433;
 }
-
 
 .left-side li,
 .right-side li {
@@ -557,17 +602,14 @@ main {
     line-height: 1.6;
 }
 
-
 .left-side li span {
     color: #33d889;
 }
-
 
 .left-body hr {
     border: 1px dashed #4a4a4a;
     margin: 25px 0;
 }
-
 
 .left-body .tag {
     background: #3a3a3a;
@@ -637,7 +679,7 @@ main {
         text-align: center;
     }
 
-        .section3 .difference .heading {
+    .section3 .difference .heading {
         font-size: 8vw;
         margin-bottom: 25px;
         font-weight: 600;
@@ -655,13 +697,15 @@ main {
         gap: 40px;
     }
 
-
     .section3 .difference .diff .left-side,
     .section3 .difference .diff .right-side {
         width: 85vw;
         padding: 20px;
     }
-
-
 }
 
+footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 20px;
+}
